@@ -46,6 +46,7 @@ cc_library(
     name = "core_headers",
     hdrs = [
         "alignment.h",
+        "attributes.h",
         "target_platform.h",
     ],
     deps = [
@@ -107,6 +108,7 @@ cc_library(
     srcs = ["logging.cc"],
     hdrs = ["logging.h"],
     deps = [
+        ":core_headers",
         ":tracing",
         "@com_google_absl//absl/base:core_headers",
         "@com_google_absl//absl/flags:flag",
@@ -244,5 +246,6 @@ cc_library(
     hdrs = ["tracing.h"],
     deps = [
         "@com_google_absl//absl/base:core_headers",
+        ":core_headers",
     ],
 )
